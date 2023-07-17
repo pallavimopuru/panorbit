@@ -1,0 +1,42 @@
+p span:first-child{
+  font-size: 18px;
+  color: #918f8f;
+  font-weight: 500;
+}
+p span:nth-child(2){
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 4px;
+}
+.longitude {
+  font-size: 15px;
+  color: #918f8f;
+  font-weight: 500;
+}
+.latitude {
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 4px;
+}
+.big-profile-img{
+  width: 192px !important;
+  height: 192px !important;
+}
+.person-details{
+  font-size: 20px;
+  font-weight: 500;
+}
+.border-left{
+  border-left: 1px solid #ccc;
+  padding:20px;
+}
+
+p{
+  display:flex;
+  align-items: center;
+
+}
+.border-bottom{
+  border-bottom: 1px solid #ccc;
+  padding:20px;
+}

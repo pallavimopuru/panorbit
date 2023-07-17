@@ -1,0 +1,58 @@
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Add position relative */
+}
+
+.bg-img {
+  background-image: url("../../../../../assets/images/wave.svg");
+  background-repeat: no-repeat;
+  height: 68vh;
+  background-size: cover;
+  position: relative;
+}
+
+.profile-card {
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Set the desired width of the card */
+  max-width: 530px; /* Set the maximum width of the card */
+}
+
+.select-title {
+  border-radius: 15px 15px 0 0;
+  background-color: #f7f7f7;
+  padding: 37px;
+}
+
+.profile-list {
+  background-color: white;
+  padding: 0px 32px;
+  height: 342px;
+  overflow-y: auto;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.profile-list ul {
+  color: black;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.profile-list li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #e1e1e1;
+
+}
+.profile-list img{
+  cursor: pointer;
+}
+

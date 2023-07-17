@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.space-between{
+  display: flex;
+  justify-content: space-between;
+}
+// ------------flex properties-------------
+.profile-text{
+  font-size: 18px;
+  font-weight: 500;
+}
+.profile-list li span {
+  font-size: 18px;
+  font-weight: 400;
+  color: #474545;
+  cursor: pointer;
+}
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.align-end{
+  display: flex;
+  justify-content: end
+}
+// comming soon
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+
+}
+
+.coming-soon {
+  text-align: center;
+  font-size: 66px;
+  font-weight: bolder;
+  color: rgb(233, 231, 231);
+}

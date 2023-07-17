@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- sidebar starts -->
+      <div class="bg-sidebar">
+        <ul>
+          <li [class.active]="isActive('/profile')">
+            <a href="/profile">Profile</a>
+          </li>
+          <li [class.active]="isActive('/posts')">
+            <a href="/posts">Posts</a>
+          </li>
+          <li [class.active]="isActive('/gallery')">
+            <a href="/gallery">Gallery</a>
+          </li>
+          <li [class.active]="isActive('/todo')">
+            <a href="/todo">ToDo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div *ngIf="user">
+        <div class="space-between py-3 border-bottom">
+          <div class="profile-text">Profile</div>
+          <div>
+            <div>
+              <div class="profile-list">
+                <div>
+                  <img [src]="user.profilepicture" alt="User Profile" class="profile-img" />&nbsp;
+                  <span class="person-details">{{ user.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Display additional user details here -->
+
+      </div>
+      <router-outlet></router-outlet>
+      <!-- chatbox starts -->
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container-fluid bg-img">
+  <div class="profile-card">
+    <div class="select-title text-center">
+      <h5 class="mb-0 title-padding">{{ Title }}</h5>
+    </div>
+
+    <div class="profile-list">
+      <ul>
+        <li *ngFor="let user of users" (click)="navigateToProfile(user)">
+          <img [src]="user.profilepicture" alt="User Profile" class="profile-img" />&nbsp;
+          <span>{{ user.name }}</span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
