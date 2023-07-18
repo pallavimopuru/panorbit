@@ -8,49 +8,53 @@ import { GalleryComponent } from './components/common/gallery/gallery.component'
 import { TodoComponent } from './components/common/todo/todo.component';
 
 const routes: Routes = [
-
   {
-    path: '',
+    path: 'panorbit',
     component: ProfileDetailsContainerComponent,
     children: [
-    
       {
-        path: 'panorbit/profile',
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'profile'
+      },
+      {
+        path: 'profile',
         component: ProfileComponent,
         data: { pageTitle: 'Profile' }
       },
       {
-        path: 'panorbit/posts',
+        path: 'posts',
         component: PostsComponent,
         data: { pageTitle: 'Posts' }
       },
       {
-        path: 'panorbit/gallery',
+        path: 'gallery',
         component: GalleryComponent,
         data: { pageTitle: 'Gallery' }
       },
       {
-        path: 'panorbit/todo',
+        path: 'todo',
         component: TodoComponent,
         data: { pageTitle: 'Todo' }
       }
     ]
   },
   {
-    path: 'select-account',
+    path: 'panorbit/select-account',
     component: SelectAccountComponent
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'select-account'
+    redirectTo: 'panorbit/select-account'
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'select-account'
+    redirectTo: 'panorbit/select-account'
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

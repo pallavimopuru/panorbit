@@ -52,3 +52,8 @@ tr td:nth-child(2) {
   border-left: 1px solid #ccc;
   padding-left: 20px;
 }
+@media (min-width: 1482px) and (max-width: 2540px) {
+table {
+  width: 70%;
+}
+}
