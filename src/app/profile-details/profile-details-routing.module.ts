@@ -11,13 +11,14 @@ const routes: Routes = [
   // profile details page routing here...
 
   {
-    path: 'panorbit/select-account',
+    path: 'select-account',
     component: SelectAccountComponent
   },
   {
-    path: 'panorbit',
+    path: '',
     component: ProfileDetailsContainerComponent,
     children: [
+      { path: '', pathMatch: 'full', redirectTo: 'select-account' },
     {
         path: 'profile',
         component: ProfileComponent,data: { pageTitle: 'Profile' } 
@@ -36,17 +37,8 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: '',
-    redirectTo: 'panorbit/select-account',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: 'panorbit/select-account'
-  }
-];
-
+ 
+]
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
