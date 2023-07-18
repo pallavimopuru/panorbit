@@ -11,39 +11,39 @@ const routes: Routes = [
   // profile details page routing here...
 
   {
-    path: 'select-account',
+    path: 'panorbit/select-account',
     component: SelectAccountComponent
   },
   {
-    path: '',
+    path: 'panorbit',
     component: ProfileDetailsContainerComponent,
     children: [
     {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,data: { pageTitle: 'Profile' } 
       },
       {
         path: 'posts',
-        component: PostsComponent
+        component: PostsComponent,data: { pageTitle: 'Posts' } 
       },
       {
         path: 'gallery',
-        component: GalleryComponent
+        component: GalleryComponent,data: { pageTitle: 'Gallery' } 
       },
       {
         path: 'todo',
-        component: TodoComponent
+        component: TodoComponent,data: { pageTitle: 'Todo' } 
       }
     ]
   },
   {
     path: '',
-    redirectTo: 'select-account',
+    redirectTo: 'panorbit/select-account',
     pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: 'select-account'
+    redirectTo: 'panorbit/select-account'
   }
 ];
 

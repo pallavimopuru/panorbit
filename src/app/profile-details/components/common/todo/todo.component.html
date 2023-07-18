@@ -1,3 +1,20 @@
+<div *ngIf="user" class="my-3">
+
+  <div class="space-between py-3 border-bottom">
+    <div class="profile-text">{{ Title }}</div>
+    <div>
+      <div>
+        <div class="profile-list">
+          <div>
+            <img [src]="user.profilepicture" alt="User Profile" class="profile-img" />&nbsp;
+            <span class="person-details">{{ user.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
 <div class="center-container">
   <h1 class="coming-soon">Comming soon</h1>
 </div>

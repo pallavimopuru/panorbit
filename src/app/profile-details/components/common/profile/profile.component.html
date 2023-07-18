@@ -3,7 +3,23 @@
 
 <div *ngIf="user" class="my-3">
 
+        <div class="space-between py-3 border-bottom">
+          <div class="profile-text">{{ Title }}</div>
+          <div>
+            <div>
+              <div class="profile-list">
+                <div>
+                  <img [src]="user.profilepicture" alt="User Profile" class="profile-img" />&nbsp;
+                  <span class="person-details">{{ user.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!-- Display additional user details here -->
+      </div>
   <div class="row">
+
     <div class="col-md-5 border-right">
       <div class="border-bottom">
         <div class=" text-center">
@@ -12,42 +28,82 @@
           </p>
           <p class="person-details">{{ user.name }}</p>
         </div>
-        <div >
-          <p>
-            <span>Username:</span> <span>{{ user.username }}</span>
-          </p>
-          <p><span>Email:</span> <span>{{ user.email }}</span></p>
-          <p><span>Phone:</span><span>{{ user.phone }}</span></p>
-          <p><span>Website:</span><span>{{ user.website }}</span></p>
-        </div>
-
+        <div>
+          <table>
+          <tr>
+          <td class="label">Username &nbsp;:</td>
+          <td class="value">{{ user.username }}</td>
+          </tr>
+          <tr>
+          <td class="label">Email &nbsp;:</td>
+          <td class="value">{{ user.email }}</td>
+          </tr>
+          <tr>
+          <td class="label">Phone &nbsp;:</td>
+          <td class="value">{{ user.phone }}</td>
+          </tr>
+          <tr>
+          <td class="label">Website &nbsp;:</td>
+          <td class="value">{{ user.website }}</td>
+          </tr>
+          </table>
+          </div>
 
       </div>
       <div>
-        <p class="text-center"><span>Company</span></p>
-        <p><span>Name:</span><span>{{ user.company.name }}</span></p>
-        <p><span>Catchphrase:</span><span>{{ user.company.catchPhrase }}</span></p>
-        <p><span>bs:</span><span>{{ user.company.bs }}</span></p>
-      </div>
+        <p class="text-center">
+        <span>Company</span>
+        </p>
+        <table>
+        <tr>
+        <td class="label">Name &nbsp;:</td>
+        <td class="value">{{ user.company.name }}</td>
+        </tr>
+        <tr>
+        <td class="label">Catchphrase &nbsp;:</td>
+        <td class="value">{{ user.company.catchPhrase }}</td>
+        </tr>
+        <tr>
+        <td class="label">bs &nbsp;:</td>
+        <td class="value">{{ user.company.bs }}</td>
+        </tr>
+        </table>
+        </div>
     </div>
     <div class="col-md-7 border-left">
       <div>
-        <p><span>Address:</span></p>
-        <p><span>Street:</span><span>{{ user.address.street }}</span></p>
-        <p><span>Suite:</span><span>{{ user.address.suite }}</span></p>
-        <p><span>City:</span><span>{{ user.address.city }}</span></p>
-        <p><span>ZipCode:</span><span>{{ user.address.zipcode }}</span></p>
-      </div>
-      <div>
-        <!-- <p><span>Website:</span><span>{{ user.website }}</span></p> -->
+      <p>
+      <span class="label">Address &nbsp;:</span>
+      </p>
+      <table>
+      <tr>
+      <td class="label">Street &nbsp;:</td>
+      <td class="value">{{ user.address.street }}</td>
+      </tr>
+      <tr>
+      <td class="label">Suite &nbsp;:</td>
+      <td class="value">{{ user.address.suite }}</td>
+      </tr>
+      <tr>
+      <td class="label">City &nbsp;:</td>
+      <td class="value">{{ user.address.city }}</td>
+      </tr>
+      <tr>
+      <td class="label">ZipCode &nbsp;:</td>
+      <td class="value">{{ user.address.zipcode }}</td>
+      </tr>
+      </table>
+
+
+        <!-- <p><span>Website &nbsp;:</span><span>{{ user.website }}</span></p> -->
         <div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.457682714406!2d-97.74305728530362!3d30.267153481791466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b59930a4aaab%3A0x715969634e667e3b!2sAustin%2C%20TX%2C%20USA!5e0!3m2!1sen!2sin!4v1567936844193!5m2!1sen!2sin" width="490" height="300" style="border: raduis 25px;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.457682714406!2d-97.74305728530362!3d30.267153481791466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b59930a4aaab%3A0x715969634e667e3b!2sAustin%2C%20TX%2C%20USA!5e0!3m2!1sen!2sin!4v1567936844193!5m2!1sen!2sin" width="590" height="380" style="border: raduis 25px;" allowfullscreen="" loading="lazy"></iframe>
 
         </div>
-        <div class="align-end">
+        <div class="align-center">
         <div>
-          <span class="latitude">Lat:</span><span class="longitude">{{ user.address.geo.lat }}</span></div>&nbsp;
-          <div><span class="latitude">Long:</span><span class="longitude">{{ user.address.geo.lng }}</span></div>
+          <span class="latitude">Lat &nbsp;:</span><span class="longitude">{{ user.address.geo.lat }}</span></div>&nbsp;
+          <div><span class="latitude">Long &nbsp;:</span><span class="longitude">{{ user.address.geo.lng }}</span></div>
         </div>
       </div>
     </div>

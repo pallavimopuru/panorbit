@@ -1,45 +1,59 @@
-<div class="container mt-4">
+<div class="container-fluid mt-4 p-5">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
       <!-- sidebar starts -->
       <div class="bg-sidebar">
         <ul>
           <li [class.active]="isActive('/profile')">
-            <a href="/profile">Profile</a>
+            <a href="panorbit/profile">Profile</a>
           </li>
           <li [class.active]="isActive('/posts')">
-            <a href="/posts">Posts</a>
+            <a href="panorbit/posts">Posts</a>
           </li>
           <li [class.active]="isActive('/gallery')">
-            <a href="/gallery">Gallery</a>
+            <a href="panorbit/gallery">Gallery</a>
           </li>
           <li [class.active]="isActive('/todo')">
-            <a href="/todo">ToDo</a>
+            <a href="panorbit/todo">ToDo</a>
           </li>
         </ul>
       </div>
+      
+      
+      
     </div>
-    <div class="col-md-9">
-      <div *ngIf="user">
-        <div class="space-between py-3 border-bottom">
-          <div class="profile-text">Profile</div>
-          <div>
-            <div>
-              <div class="profile-list">
-                <div>
-                  <img [src]="user.profilepicture" alt="User Profile" class="profile-img" />&nbsp;
-                  <span class="person-details">{{ user.name }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Display additional user details here -->
-
-      </div>
+    <div class="col-md-10">
+ 
       <router-outlet></router-outlet>
       <!-- chatbox starts -->
-
+      <div class="container">
+        <button class="expand-button" (click)="toggleDiv()" [class.active]="showDiv">
+        <div class="space-between">
+          <div class="button-text"><i class="bi bi-chat-right"></i> &nbsp;Chats</div>
+          <div class="arrow" [class.rotated]="showDiv"><i class="bi bi-chevron-down"></i></div>
+        </div> 
+        </button>
+      
+        <div class="bottom-div">
+          <div class="additional-div" [class.hidden]="!showDiv">
+            <!-- Additional content -->
+            <div class="chat-box-profile-list profile-list">
+              <ul class="user-list">
+                <li *ngFor="let user of users; let i=index" [class.odd]="i % 2 === 0" [class.even]="i % 2 !== 0">
+                  <img [src]="user.profilepicture" alt="User Profile" class="profile-img" />&nbsp;
+                  <span>{{ user.name }}</span>
+                  <span class="dot"></span>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
     </div>
   </div>
 </div>

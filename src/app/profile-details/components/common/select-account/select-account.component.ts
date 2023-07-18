@@ -21,7 +21,8 @@ export class SelectAccountComponent {
   }
 // Navigate to the profile page with the selected user's data
 navigateToProfile(user: any) {
-  this.route.navigate(['/profile'], { state: { user: user } });
+  sessionStorage.setItem('user',JSON.stringify(user));
+  this.route.navigate(['panorbit/profile'], { state: { user: user } });
   this.route.events.subscribe((event: any) => {
     if (event instanceof NavigationEnd) {
       this.routeReuseStrategy.shouldReuseRoute = function() {
@@ -35,6 +36,8 @@ navigateToProfile(user: any) {
     const url = API_BASE_URL;
     this.http.get<any>(url).subscribe(data => {
       this.users = data.users;
+      console.log('Users:',this.users);
+
     });
   }
 }

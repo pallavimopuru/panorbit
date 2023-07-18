@@ -11,13 +11,12 @@ import { UserdataService } from 'src/app/shared/service/userdata.service';
 })
 export class ProfileComponent implements OnInit {
   user: any;
-
+  Title='Profile';
   constructor(private router: Router, private userDataService: UserdataService) {}
 
   isActive(route: string): boolean {
     return this.router.url === route;
   }
-
   ngOnInit() {
     if (this.userDataService.user) {
       this.user = this.userDataService.user;
@@ -25,7 +24,13 @@ export class ProfileComponent implements OnInit {
       this.user = history.state.user;
       this.userDataService.user = this.user;
     }
+
+    const storedUser = sessionStorage.getItem('user');
+    if (storedUser) {
+      this.user = JSON.parse(storedUser);
+    }
   }
+
   navigateToProfile(user: any) {
     this.userDataService.user = user;
 
