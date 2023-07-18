@@ -11,7 +11,7 @@ const routes: Routes = [
   // profile details page routing here...
 
   {
-    path: 'select-account',
+    path: '',
     component: SelectAccountComponent
   },
   {
