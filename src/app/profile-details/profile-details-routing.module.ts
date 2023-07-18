@@ -11,7 +11,7 @@ const routes: Routes = [
   // profile details page routing here...
 
   {
-    path: '',
+    path: 'select-account',
     component: SelectAccountComponent
   },
   {
@@ -35,8 +35,20 @@ const routes: Routes = [
         path: 'todo',
         component: TodoComponent,data: { pageTitle: 'Todo' } 
       }
-    ]
+    
+    ],
   },
+  {
+    path: "",
+    pathMatch: "full",
+    redirectTo: ''
+  },
+  {
+    path: "**",
+    pathMatch: "full",
+    redirectTo: ""
+  }
+
  
 ]
 @NgModule({
