@@ -8,49 +8,50 @@ import { GalleryComponent } from './components/common/gallery/gallery.component'
 import { TodoComponent } from './components/common/todo/todo.component';
 
 const routes: Routes = [
-  // profile details page routing here...
 
+  {
+    path: '',
+    component: ProfileDetailsContainerComponent,
+    children: [
+    
+      {
+        path: 'panorbit/profile',
+        component: ProfileComponent,
+        data: { pageTitle: 'Profile' }
+      },
+      {
+        path: 'panorbit/posts',
+        component: PostsComponent,
+        data: { pageTitle: 'Posts' }
+      },
+      {
+        path: 'panorbit/gallery',
+        component: GalleryComponent,
+        data: { pageTitle: 'Gallery' }
+      },
+      {
+        path: 'panorbit/todo',
+        component: TodoComponent,
+        data: { pageTitle: 'Todo' }
+      }
+    ]
+  },
   {
     path: 'select-account',
     component: SelectAccountComponent
   },
   {
     path: '',
-    component: ProfileDetailsContainerComponent,
-    children: [
-      { path: '', pathMatch: 'full', redirectTo: 'select-account' },
-    {
-        path: 'profile',
-        component: ProfileComponent,data: { pageTitle: 'Profile' } 
-      },
-      {
-        path: 'posts',
-        component: PostsComponent,data: { pageTitle: 'Posts' } 
-      },
-      {
-        path: 'gallery',
-        component: GalleryComponent,data: { pageTitle: 'Gallery' } 
-      },
-      {
-        path: 'todo',
-        component: TodoComponent,data: { pageTitle: 'Todo' } 
-      }
-    
-    ],
+    pathMatch: 'full',
+    redirectTo: 'select-account'
   },
   {
-    path: "",
-    pathMatch: "full",
-    redirectTo: ''
-  },
-  {
-    path: "**",
-    pathMatch: "full",
-    redirectTo: ""
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'select-account'
   }
+];
 
- 
-]
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
